@@ -5,6 +5,7 @@
 #include "server.h"
 
 // multi threading for snakes
+// timing of threads with time_max
 int main(int argc, char **argv)
 {
     // auto current_path = std::filesystem::current_path();
@@ -13,10 +14,10 @@ int main(int argc, char **argv)
     // how to init loguru ?
 
     loguru::init(argc, argv);
-    loguru::add_file("everything.log", loguru::Append, loguru::Verbosity_MAX);
-    loguru::add_file("info.log", loguru::Append, loguru::Verbosity_INFO);
-    loguru::add_file("warning.log", loguru::Append, loguru::Verbosity_WARNING);
-    loguru::add_file("error.log", loguru::Append, loguru::Verbosity_ERROR);
+    loguru::add_file("logs/everything.log", loguru::Append, loguru::Verbosity_MAX);
+    loguru::add_file("logs/info.log", loguru::Append, loguru::Verbosity_INFO);
+    loguru::add_file("logs/warning.log", loguru::Append, loguru::Verbosity_WARNING);
+    loguru::add_file("logs/error.log", loguru::Append, loguru::Verbosity_ERROR);
 
     LOG_F(INFO, "Hello this is an info!");
     LOG_F(WARNING, "Hello this is a warning!");

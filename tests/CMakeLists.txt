@@ -20,12 +20,9 @@ if (ENABLE_COVERAGE)
         "${PROJECT_SOURCE_DIR}/cmake/*"
         "${PROJECT_SOURCE_DIR}/docs/*"
         "${PROJECT_SOURCE_DIR}/external/*"
-        "${PROJECT_SOURCE_DIR}/logs/*"
         "${PROJECT_SOURCE_DIR}/tests/*"
         "${CONAN_BOOST_ROOT}/*"
         "${CONAN_CATCH2_ROOT}/*"
-        "${CONAN_CELERO_ROOT}/*"
-        "${CONAN_CXXOPTS_ROOT}/*"
         "/usr/include/*")
     setup_target_for_coverage_lcov(
         NAME ${COVERAGE_MAIN}

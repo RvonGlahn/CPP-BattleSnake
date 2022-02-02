@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 
 set(PROJECT "BattleSnake")
 
-project(CppSnake VERSION 1.0.0 LANGUAGES CXX)
+project("${PROJECT}_Project" VERSION 0.0.1 LANGUAGES CXX)
 
 # Global CMake variables are set here
 set(CMAKE_CXX_STANDARD              17)
@@ -14,7 +14,6 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS   ON)
 option(ENABLE_WARNINGS      "Enable to add warnings to a target."   ON)
 option(ENABLE_TESTING       "Enable a Unit Testing build."          ON)
 option(ENABLE_COVERAGE      "Enable a Code Coverage build."         OFF)
-option(ENABLE_BENCHMARKS    "Enable a benchmark build."             OFF)
 option(ENABLE_CLANG_TIDY    "Enable a clang tidy checks."           OFF)
 option(ENABLE_CPPCHECK      "Enable a cppcheck checks."             OFF)
 option(ENABLE_LTO           "Enable Link Time Optimization (LTO)."  OFF)
@@ -41,7 +40,6 @@ set(LIBRARY_NAME    ${PROJECT}_Lib)
 set(EXECUTABLE_NAME ${PROJECT}_Executable)
 set(TEST_MAIN       ${PROJECT}_unit_tests)
 set(COVERAGE_MAIN   ${PROJECT}_coverage)
-set(BENCHMARK_MAIN  ${PROJECT}_benchmarks)
 
 # Cmake modules
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/)
