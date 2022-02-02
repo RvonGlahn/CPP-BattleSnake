@@ -53,6 +53,15 @@ include(${PROJECT_SOURCE_DIR}/build/conanbuildinfo.cmake)
 conan_basic_setup()
 
 # Add external libraries
+find_package(Git QUIET)
+
+if(GIT_FOUND)
+    message(STATUS "Submodule update")
+    execute_process(COMMAND ${GIT_EXECUTABLE} submodule update --init --recursive
+                    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+                    RESULT_VARIABLE GIT_SUBMOD_RESULT)
+endif()
+
 add_subdirectory(${PROJECT_SOURCE_DIR}/external)
 
 # Add first-party libraries
