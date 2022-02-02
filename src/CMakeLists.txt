@@ -1,6 +1,13 @@
-cmake_minimum_required(Version 3.16)
+# Lib Includes
+set(LIBRARY_SOURCES "server.cc")
+set(LIBRARY_HEADERS "${PROJECT_SOURCE_DIR}/include/server.h")
+set(LIBRARY_INCLUDES "${PROJECT_SOURCE_DIR}/include/") 
 
-project(CppSnake VERSION 1.0.0 LANGUAGES CXX)
+add_library(${LIBRARY_NAME} ${LIBRARY_SOURCES} ${LIBRARY_HEADERS})
+target_include_directories(${LIBRARY_NAME} PUBLIC ${LIBRARY_INCLUDES})
+target_link_libraries(${LIBRARY_NAME} PUBLIC loguru)
+target_compile_features(${LIBRARY_NAME} PUBLIC cxx_std_17)
 
-add_subdirectory("server")
-add_subdirectory("logic")
+if(${ENABLE_LTO})
+target_enable_lto(${LIBRARY_NAME} optimized)
+endif()
