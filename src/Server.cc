@@ -1,7 +1,6 @@
 #include <iostream>
 
-#include "agent.h"
-#include "server.h"
+#include "Server.h"
 
 // use drogon
 

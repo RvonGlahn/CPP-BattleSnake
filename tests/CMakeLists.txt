@@ -1,8 +1,5 @@
-# Sources
-set(TEST_SOURCES "main.cc")
-
 # Executable
-add_executable(${TEST_MAIN} ${TEST_SOURCES})
+add_executable(${TEST_MAIN} "TestPosition.cc")
 
 # Settings
 target_link_libraries(${TEST_MAIN} PRIVATE ${LIBRARY_NAME} ${CONAN_CATCH2})

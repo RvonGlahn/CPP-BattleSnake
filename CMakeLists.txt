@@ -14,13 +14,14 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS   ON)
 option(ENABLE_WARNINGS      "Enable to add warnings to a target."   ON)
 option(ENABLE_TESTING       "Enable a Unit Testing build."          ON)
 option(ENABLE_COVERAGE      "Enable a Code Coverage build."         OFF)
-option(ENABLE_CLANG_TIDY    "Enable a clang tidy checks."           OFF)
-option(ENABLE_CPPCHECK      "Enable a cppcheck checks."             OFF)
 option(ENABLE_LTO           "Enable Link Time Optimization (LTO)."  OFF)
 option(ENABLE_CCACHE        "Enable the usage of Ccache."           OFF)
 
 # Cmake modules
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/)
+
+include(ConfigSafeGuards)
+include(Warnings)
 
 if (ENABLE_TESTING OR ENABLE_COVERAGE)
     include(CTest)
@@ -32,6 +33,15 @@ if (ENABLE_COVERAGE)
         message("Coverage only for GNU|Clang")
         set(ENABLE_COVERAGE OFF)
     endif()
+endif()
+
+if (ENABLE_LTO)
+    include(LTO)
+    find_lto(CXX)
+endif()
+
+if (ENABLE_CCACHE)
+    include(Ccache)
 endif()
 
 
