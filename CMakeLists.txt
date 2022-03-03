@@ -46,17 +46,16 @@ endif()
 
 
 # Project and lib names
-set(LIBRARY_NAME    ${PROJECT}_Lib)
+set(LIB_NAME_ENV ${PROJECT}_Lib_ENV)
+set(LIB_NAME_LOGIC ${PROJECT}_Lib_LOGIC)
+set(LIB_NAME_SERVER ${PROJECT}_Lib_SERVER)
+
 set(EXECUTABLE_NAME ${PROJECT}_Executable)
 set(TEST_MAIN       ${PROJECT}_unit_tests)
 set(COVERAGE_MAIN   ${PROJECT}_coverage)
 
 # Cmake modules
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/)
-# include(Documentation)
-if (ENABLE_TESTING)
-    include(CTest)
-endif()
 
 # Add conan libraries
 include(${PROJECT_SOURCE_DIR}/build/conanbuildinfo.cmake)

@@ -1,8 +1,8 @@
 #include <filesystem>
 #include <iostream>
 
+#include "Server.h"
 #include "loguru.hpp"
-#include "server.h"
 
 // multi threading for snakes
 // timing of threads with time_max
