@@ -2,6 +2,7 @@
 
 #include "Direction.h"
 #include <iostream>
+#include <vector>
 
 class Position
 {
@@ -11,8 +12,12 @@ class Position
 
     ~Position() = default;
 
-    bool operator==(const Position &rhs);
-    Position advanced(Direction direction);
+    bool operator==(const Position &rhs) const;
+    Position step(Direction direction) const;
+    std::vector<Position> neighbor_positions(Position &position) const;
+
+    const unsigned int get_x() const;
+    const unsigned int get_y() const;
 
   private:
     unsigned int m_x;

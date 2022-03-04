@@ -1,9 +1,42 @@
-// class SnakeAgent:
+#pragma once
 
-// agenten class
-// info, move, end, start
-// use gametrees (Monte Carlo)
-// save state in agent
-// calculate boardcontrol
-// implement alpha star
-// use interface to change logic easily
+#include <string>
+#include <vector>
+
+#include "Direction.h"
+#include "Position.h"
+
+class Snake
+{
+  public:
+    Snake(std::string &snake_id);
+    Snake(std::string &snake_id,
+          std::string &snake_name,
+          std::string &snake_color,
+          std::vector<Position> &body,
+          unsigned int health,
+          double latency);
+
+    ~Snake() = default;
+
+    const unsigned int get_health() const;
+    const unsigned int get_length() const;
+    const std::vector<Position> get_body() const;
+    const Position get_head() const;
+    const Position get_tail() const;
+    const Direction get_current_direction();
+
+    void set_initial_position(const Position start_position);
+
+    std::vector<Direction> possible_directions();
+    const bool is_alive() const;
+
+  private:
+    std::string m_snake_id;
+    std::string m_snake_name;
+    std::string m_snake_color;
+
+    std::vector<Position> m_body;
+    unsigned int m_health = 100;
+    double m_latency = 0.0;
+};

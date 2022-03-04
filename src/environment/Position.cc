@@ -8,9 +8,19 @@ Position::Position(const Position &position) : m_x(position.m_x), m_y(position.m
 {
 }
 
-bool Position::operator==(const Position &rhs)
+const unsigned int Position::get_x() const
 {
-    if (m_x == rhs.m_x)
+    return m_x;
+}
+
+const unsigned int Position::get_y() const
+{
+    return m_y;
+}
+
+bool Position::operator==(const Position &rhs) const
+{
+    if (m_x == rhs.m_x && m_y == rhs.m_y)
     {
         return true;
     }
@@ -20,7 +30,7 @@ bool Position::operator==(const Position &rhs)
     }
 }
 
-Position Position::advanced(Direction direction)
+Position Position::step(Direction direction) const
 {
 
     if (direction == Direction::UP)
@@ -39,4 +49,9 @@ Position Position::advanced(Direction direction)
     {
         return Position(m_x, m_y - 1);
     }
+}
+
+std::vector<Position> Position::neighbor_positions(Position &position) const
+{
+    //TODO
 }

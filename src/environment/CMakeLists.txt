@@ -1,5 +1,5 @@
 # Lib Includes
-set(LIBRARY_SOURCES "Position.cc" "Direction.cc" "Snake.cc" "BoardState.cc")
+set(LIBRARY_SOURCES "Position.cc" "Snake.cc" "BoardState.cc")
 set(LIBRARY_PATH "${PROJECT_SOURCE_DIR}/include/environment")
 set(LIBRARY_HEADERS "${LIBRARY_PATH}/Position.h" "${LIBRARY_PATH}/Direction.h" "${LIBRARY_PATH}/Snake.h" "${LIBRARY_PATH}/BoardState.h")
 set(LIBRARY_INCLUDES "${PROJECT_SOURCE_DIR}/include/environment/") 
