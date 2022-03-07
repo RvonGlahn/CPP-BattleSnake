@@ -34,8 +34,8 @@ std::vector<Direction> possible_directions(Direction snake_direction)
 
 Direction direction_to_reach_field(Position &from_position, Position &to_position)
 {
-    auto delta_x = to_position.get_x() - from_position.get_x();
-    auto delta_y = to_position.get_y() - from_position.get_y();
+    int delta_x = to_position.get_x() - from_position.get_x();
+    int delta_y = to_position.get_y() - from_position.get_y();
 
     if (delta_x > 0)
     {
@@ -58,3 +58,13 @@ Direction direction_to_reach_field(Position &from_position, Position &to_positio
         return Direction(rand() % 4);
     }
 };
+
+std::vector<Position> neighbor_positions(Position &position)
+{
+    auto x = position.get_x();
+    auto y = position.get_y();
+
+    std::vector<Position> neighbors = {Position(x + 1, y), Position(x - 1, y), Position(x, y + 1), Position(x, y - 1)};
+
+    return neighbors;
+}
