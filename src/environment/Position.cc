@@ -1,4 +1,5 @@
 #include "Position.h"
+#include <set>
 
 Position::Position(const unsigned int x, const unsigned int y) : m_x(x), m_y(y)
 {
@@ -49,9 +50,4 @@ Position Position::step(Direction direction) const
     {
         return Position(m_x, m_y - 1);
     }
-}
-
-std::vector<Position> Position::neighbor_positions(Position &position) const
-{
-    //TODO
 }

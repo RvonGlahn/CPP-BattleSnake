@@ -2,7 +2,7 @@
 
 #include "Direction.h"
 #include <iostream>
-#include <vector>
+#include <set>
 
 class Position
 {
@@ -14,7 +14,6 @@ class Position
 
     bool operator==(const Position &rhs) const;
     Position step(Direction direction) const;
-    std::vector<Position> neighbor_positions(Position &position) const;
 
     const unsigned int get_x() const;
     const unsigned int get_y() const;
