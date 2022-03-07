@@ -28,8 +28,7 @@ class Snake
 
     void set_initial_position(const Position start_position);
 
-    std::vector<Direction> possible_directions();
-    const bool is_alive() const;
+    std::vector<Direction> valid_directions();
 
   private:
     std::string m_snake_id;

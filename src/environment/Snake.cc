@@ -1,4 +1,5 @@
 #include "Snake.h"
+#include "DirectionUtil.h"
 #include <string>
 
 Snake::Snake(std::string &snake_id) : m_snake_id(snake_id)
@@ -41,7 +42,18 @@ const Position Snake::get_tail() const
     return m_body.back();
 }
 
-// const Direction Snake::get_current_direction();
-// void set_initial_position(const Position start_position);
-// std::vector<Direction> possible_directions();
-// const bool is_alive() const;
+// TODO
+const Direction Snake::get_current_direction()
+{
+    Position current_pos = m_body[0];
+    Position previous_pos = m_body[1];
+
+    return direction_to_reach_field(previous_pos, current_pos);
+}
+
+std::vector<Direction> Snake::valid_directions()
+{
+    Direction head_direction = get_current_direction();
+
+    return possible_directions(head_direction);
+}
