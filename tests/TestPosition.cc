@@ -47,6 +47,17 @@ TEST_CASE("Test position equal operator")
     REQUIRE(pos == pos2);
 }
 
+TEST_CASE("Test neighbour positions")
+{
+    Position pos = Position(1, 2);
+    auto positions = neighbor_positions(pos);
+
+    REQUIRE(positions[0] == Position(2, 2));
+    REQUIRE(positions[1] == Position(0, 2));
+    REQUIRE(positions[2] == Position(1, 3));
+    REQUIRE(positions[3] == Position(1, 1));
+}
+
 TEST_CASE("TEST Direction util functions")
 {
     Direction up = Direction::UP;
