@@ -1,5 +1,7 @@
 #define CATCH_CONFIG_MAIN
 
+#include "Direction.h"
+#include "DirectionUtil.h"
 #include "Position.h"
 #include "catch2/catch.hpp"
 
@@ -43,4 +45,17 @@ TEST_CASE("Test position equal operator")
     auto pos2 = Position(pos);
 
     REQUIRE(pos == pos2);
+}
+
+TEST_CASE("TEST Direction util functions")
+{
+    Direction up = Direction::UP;
+    auto dirs = possible_directions(up);
+    REQUIRE(dirs[0] == Direction::UP);
+
+    Position pos1 = Position(1, 2);
+    Position pos2 = Position(2, 2);
+
+    auto dir = direction_to_reach_field(pos1, pos2);
+    REQUIRE(dir == Direction::RIGHT);
 }
