@@ -7,7 +7,3 @@ enum class Direction
     DOWN,
     LEFT,
 };
-
-// possible_directions
-
-// direction_to_reach_field
