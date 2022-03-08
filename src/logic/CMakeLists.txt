@@ -1,7 +1,7 @@
 # Lib Includes
-set(LIBRARY_SOURCES "AlphaStar.cc" "FloodFill.cc" "MonteCarlo.cc")
+set(LIBRARY_SOURCES "AlphaStar.cc" "FloodFill.cc" "MonteCarlo.cc" "Agent.cc")
 set(LIBRARY_PATH "${PROJECT_SOURCE_DIR}/include/logic")
-set(LIBRARY_HEADERS "${LIBRARY_PATH}/AlphaStar.h" "${LIBRARY_PATH}/FloodFill.h" "${LIBRARY_PATH}/MonteCarlo.h")
+set(LIBRARY_HEADERS "${LIBRARY_PATH}/Agent.h" "${LIBRARY_PATH}/AlphaStar.h" "${LIBRARY_PATH}/FloodFill.h" "${LIBRARY_PATH}/MonteCarlo.h")
 set(LIBRARY_INCLUDES "${PROJECT_SOURCE_DIR}/include/logic/") 
 
 add_library(${LIB_NAME_LOGIC} STATIC ${LIBRARY_SOURCES} ${LIBRARY_HEADERS})

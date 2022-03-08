@@ -48,7 +48,7 @@ endif()
 # Project and lib names
 set(LIB_NAME_ENV ${PROJECT}_Lib_ENV)
 set(LIB_NAME_LOGIC ${PROJECT}_Lib_LOGIC)
-set(LIB_NAME_SERVER ${PROJECT}_Lib_SERVER)
+set(LIB_NAME_AGENTS ${PROJECT}_Lib_AGENTS)
 
 set(EXECUTABLE_NAME ${PROJECT}_Executable)
 set(TEST_MAIN       ${PROJECT}_unit_tests)

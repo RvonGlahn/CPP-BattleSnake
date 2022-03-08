@@ -1,9 +1,9 @@
 #include <iostream>
 
+#include "Agents.h"
 #include "Position.h"
-#include "Server.h"
 
-// use drogon
+// use oat++
 // handle multi threading here
 // use game_id
 // create mechanism to restart server
