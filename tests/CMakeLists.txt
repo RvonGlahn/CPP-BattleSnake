@@ -1,5 +1,5 @@
 # Executable
-add_executable(${TEST_MAIN} "TestPosition.cc" "TestSnake.cc")
+add_executable(${TEST_MAIN} "TestPosition.cc" "TestSnake.cc" "TestBoardState.cc")
 
 # Settings
 target_compile_features(${TEST_MAIN} PRIVATE cxx_std_17)

@@ -20,6 +20,7 @@ TEST_CASE("Test ctor of Snake class and getter", "[snake]")
     Snake snake1 = Snake(id_1);
 
     REQUIRE(snake1.get_health() == 100);
+    REQUIRE(snake1.get_snake_id() == id_1);
 
     Snake snake2 = create_snake();
     REQUIRE(snake2.get_health() == 80);

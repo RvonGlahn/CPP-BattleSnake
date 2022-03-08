@@ -42,7 +42,11 @@ const Position Snake::get_tail() const
     return m_body.back();
 }
 
-// TODO
+const std::string Snake::get_snake_id() const
+{
+    return m_snake_id;
+}
+
 const Direction Snake::get_current_direction()
 {
     Position current_pos = m_body[0];

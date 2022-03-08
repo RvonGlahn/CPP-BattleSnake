@@ -5,6 +5,7 @@
 
 // use drogon
 // handle multi threading here
+// use game_id
 // create mechanism to restart server
 
 void start_server()

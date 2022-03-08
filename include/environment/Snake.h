@@ -24,6 +24,7 @@ class Snake
     const std::vector<Position> get_body() const;
     const Position get_head() const;
     const Position get_tail() const;
+    const std::string get_snake_id() const;
     const Direction get_current_direction();
 
     void set_initial_position(const Position start_position);
