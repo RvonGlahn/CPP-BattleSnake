@@ -1,8 +1,14 @@
 # Lib Includes
+set(LIBRARY_INCLUDES "${PROJECT_SOURCE_DIR}/include/environment/") 
 set(LIBRARY_SOURCES "Position.cc" "Snake.cc" "BoardState.cc" "DirectionUtil.cc")
 set(LIBRARY_PATH "${PROJECT_SOURCE_DIR}/include/environment")
-set(LIBRARY_HEADERS "${LIBRARY_PATH}/Position.h" "${LIBRARY_PATH}/Direction.h" "${LIBRARY_PATH}/DirectionUtil.h" "${LIBRARY_PATH}/Snake.h" "${LIBRARY_PATH}/BoardState.h")
-set(LIBRARY_INCLUDES "${PROJECT_SOURCE_DIR}/include/environment/") 
+set(LIBRARY_HEADERS "${LIBRARY_PATH}/Position.h" 
+                    "${LIBRARY_PATH}/Direction.h" 
+                    "${LIBRARY_PATH}/DirectionUtil.h" 
+                    "${LIBRARY_PATH}/Snake.h" 
+                    "${LIBRARY_PATH}/BoardState.h" 
+                    "${LIBRARY_PATH}/GameInfo.h")
+
 
 add_library(${LIB_NAME_ENV} STATIC ${LIBRARY_SOURCES} ${LIBRARY_HEADERS})
 target_include_directories(${LIB_NAME_ENV} PUBLIC ${LIBRARY_INCLUDES})

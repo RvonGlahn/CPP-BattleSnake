@@ -1,7 +1,7 @@
 # Lib Includes
-set(LIBRARY_SOURCES "Agents.cc")
+set(LIBRARY_SOURCES "HungryAgent.cc")
 set(LIBRARY_PATH "${PROJECT_SOURCE_DIR}/include/agents")
-set(LIBRARY_HEADERS "${LIBRARY_PATH}/Agents.h")
+set(LIBRARY_HEADERS "${LIBRARY_PATH}/HungryAgent.h")
 set(LIBRARY_INCLUDES "${PROJECT_SOURCE_DIR}/include/agents/") 
 
 add_library(${LIB_NAME_AGENTS} STATIC ${LIBRARY_SOURCES} ${LIBRARY_HEADERS})

@@ -1,5 +1,6 @@
 #include "BoardState.h"
 #include <iostream>
+#include <stdexcept>
 
 BoardState::BoardState(unsigned int width, unsigned int height) : m_width(width), m_height(height)
 {
@@ -30,7 +31,7 @@ Snake BoardState::get_snake_by_id(std::string &snake_id) const
         }
     }
 
-    std::cout << "No Snake Found!" << std::endl;
+    throw std::invalid_argument("Snake ID does not exist!");
 }
 
 void BoardState::add_snake(Snake &new_snake)
@@ -83,6 +84,8 @@ bool BoardState::is_occupied_by_food(Position &check_pos) const
             return true;
         }
     }
+
+    return false;
 }
 
 bool BoardState::is_occupied(Position &check_pos) const
