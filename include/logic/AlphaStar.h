@@ -8,15 +8,11 @@
 struct Node
 {
     Position pos;
-    float cost;
+    int cost;
 };
 
-class CompareDist
-{
-  public:
-    bool operator()(Node &n1, Node &n2);
-};
-
-float manhattan_distance(Node &a, Node &b);
+float manhattan_distance(Position &a, Position &b);
 
 std::vector<Position> a_star(Position start, Position goal, BoardState board);
+
+std::vector<Position> create_path(std::map<Position, Position> came_from, Position goal, Position start);

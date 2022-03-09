@@ -6,25 +6,33 @@
 #include <queue>
 #include <vector>
 
-class CompareDist
+float manhattan_distance(Position &start, Position &goal)
 {
-  public:
-    bool operator()(Node &n1, Node &n2)
-    {
-        if (n1.cost > n2.cost)
-            return true;
-        else
-            return false;
-    }
-};
-
-float manhattan_distance(Node &a, Node &b)
-{
-    return (abs(a.pos.get_x() - b.pos.get_x()) + abs(a.pos.get_y() - b.pos.get_y()));
+    return (abs(start.get_x() - goal.get_x()) + abs(start.get_y() - goal.get_y()));
 }
 
 std::vector<Position> a_star(Position start, Position goal, BoardState board)
 {
     auto cmp = [](Node a, Node b) { return a.cost > b.cost; };
-    std::priority_queue<Node, std::vector<Node>, decltype(cmp)> open_list(cmp);
+    std::priority_queue<Node, std::vector<Node>, decltype(cmp)> frontier(cmp);
+    std::map<Position, Position> came_from;
+
+    Node start_node = {start, 0};
+    frontier.push(start_node);
+
+    while (!frontier.empty())
+    {
+        Node current_node = frontier.top();
+        frontier.pop();
+
+        if (current_node.pos == start)
+        {
+            std::vector<Position> path = create_path(came_from, goal, start);
+            return path;
+        }
+    }
+}
+
+std::vector<Position> create_path(std::map<Position, Position> came_from, Position goal, Position start)
+{
 }

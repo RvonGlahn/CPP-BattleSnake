@@ -13,6 +13,7 @@ class Position
     ~Position() = default;
 
     bool operator==(const Position &rhs) const;
+    bool operator!=(const Position &rhs) const;
     Position step(Direction direction) const;
 
     const unsigned int get_x() const;

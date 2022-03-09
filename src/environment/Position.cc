@@ -31,6 +31,18 @@ bool Position::operator==(const Position &rhs) const
     }
 }
 
+bool Position::operator!=(const Position &rhs) const
+{
+    if (m_x == rhs.m_x && m_y == rhs.m_y)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+}
+
 Position Position::step(Direction direction) const
 {
 
