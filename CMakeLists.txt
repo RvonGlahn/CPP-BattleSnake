@@ -71,13 +71,8 @@ if(GIT_FOUND)
                     RESULT_VARIABLE GIT_SUBMOD_RESULT)
 endif()
 
-add_subdirectory(${PROJECT_SOURCE_DIR}/external)
-
 # Add first-party libraries
 add_subdirectory(${PROJECT_SOURCE_DIR}/src)
-
-# Add executables
-add_subdirectory(${PROJECT_SOURCE_DIR}/app)
 
 # Add unit tests
 if (ENABLE_TESTING OR ENABLE_COVERAGE)

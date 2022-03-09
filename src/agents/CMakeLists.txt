@@ -6,7 +6,6 @@ set(LIBRARY_INCLUDES "${PROJECT_SOURCE_DIR}/include/agents/")
 
 add_library(${LIB_NAME_AGENTS} STATIC ${LIBRARY_SOURCES} ${LIBRARY_HEADERS})
 target_include_directories(${LIB_NAME_AGENTS} PUBLIC ${LIBRARY_INCLUDES})
-target_link_libraries(${LIB_NAME_AGENTS} PUBLIC loguru)
 target_link_libraries(${LIB_NAME_AGENTS} PUBLIC ${LIB_NAME_ENV})
 
 
