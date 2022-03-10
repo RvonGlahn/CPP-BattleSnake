@@ -16,4 +16,12 @@ TEST_CASE("Test manhattan distance")
 
 TEST_CASE("Test AStar")
 {
+    Position start = Position(1, 5);
+    Position goal = Position(8, 0);
+
+    BoardState game = BoardState(10, 10);
+    AStar search = AStar(game, start, goal);
+    std::vector<Position> path = search.search_path();
+
+    //REQUIRE
 }

@@ -20,12 +20,13 @@ std::vector<Position> AStar::search_path()
         Node current_node = m_frontier.top();
         m_frontier.pop();
 
-        if (current_node.pos == m_start)
+        if (current_node.pos == m_goal)
         {
             std::vector<Position> path = create_path();
             return path;
         }
 
+        // TODO came_from logic does not work
         m_came_from[m_previous_position] = current_node.pos;
         m_previous_position = current_node.pos;
 
@@ -77,6 +78,7 @@ std::vector<Position> AStar::create_path()
     {
         path.push_back(position);
         position = m_came_from[position];
+        break;
     }
 
     return path;
