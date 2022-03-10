@@ -1,9 +1,9 @@
 # Executable
-add_executable(${TEST_MAIN} "TestPosition.cc" "TestSnake.cc" "TestBoardState.cc")
+add_executable(${TEST_MAIN} "TestPosition.cc" "TestSnake.cc" "TestBoardState.cc" "TestAStar.cc")
 
 # Settings
 target_compile_features(${TEST_MAIN} PRIVATE cxx_std_17)
-target_link_libraries(${TEST_MAIN} PRIVATE ${LIB_NAME_ENV} ${CONAN_CATCH2})
+target_link_libraries(${TEST_MAIN} PRIVATE ${LIB_NAME_ENV} ${LIB_NAME_LOGIC} ${CONAN_CATCH2})
 
 
 # Test
