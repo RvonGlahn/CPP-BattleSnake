@@ -1,3 +1,5 @@
+#pragma once
+
 #include "AbstractAgent.h"
 #include "BoardState.h"
 #include "GameInfo.h"

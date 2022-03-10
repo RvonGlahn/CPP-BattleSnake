@@ -1,4 +1,5 @@
 #pragma once
+
 #include "BoardState.h"
 #include "Snake.h"
 #include <map>

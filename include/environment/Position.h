@@ -7,8 +7,9 @@
 class Position
 {
   public:
-    Position(const unsigned int x, const unsigned int y);
+    Position(const int x, const int y);
     Position(const Position &position);
+    Position();
 
     ~Position() = default;
 
@@ -16,10 +17,10 @@ class Position
     bool operator!=(const Position &rhs) const;
     Position step(Direction direction) const;
 
-    const unsigned int get_x() const;
-    const unsigned int get_y() const;
+    int get_x() const;
+    int get_y() const;
 
   private:
-    unsigned int m_x;
-    unsigned int m_y;
+    int m_x;
+    int m_y;
 };

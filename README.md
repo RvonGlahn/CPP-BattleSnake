@@ -2,15 +2,16 @@
 
 ![tests](https://github.com/RvonGlahn/CPP-BattleSnake/actions/workflows/ubuntu.yml/badge.svg)
 
-This is a C++ library for battlesnake.
+This is a C++ library for battlesnake and is still under construction.
 Different snakes will be provided for the use in battlesnake arenas.
 You need a webserver to deploy a Snake.
-For further details see the battlesnake [documentation](https://docs.battlesnake.com/references/api).
+For further details see the [battlesnake documentation](https://docs.battlesnake.com/references/api).
 
 ## Installation
 
 Setup is easy with the help of make and cmake.
-No dependencies are needed. Only Catch2 for testing the library is used.
+No dependencies are needed.</br>
+Only Catch2 for testing is used.
 
 ```Bash
 make install
@@ -29,6 +30,9 @@ Project is split in three libraries agents, environment and logic:
 
 - Battlesnake game objects are implemented in the environment library.
 - Heuristics, Algorithms and Game Trees can be found in the logic library.
+  - A-Star (X)
+  - BoardControl ( )
+  - MonteCarlo ( )
 - Agents use different logic and can be found in the agents library.
 
 Include an agent in your webserver and make sure to parse the json requests correctly.
