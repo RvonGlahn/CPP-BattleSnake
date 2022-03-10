@@ -1,7 +1,7 @@
 #include "Position.h"
 #include <set>
 
-Position::Position(const unsigned int x, const unsigned int y) : m_x(x), m_y(y)
+Position::Position(const int x, const int y) : m_x(x), m_y(y)
 {
 }
 
@@ -9,12 +9,16 @@ Position::Position(const Position &position) : m_x(position.m_x), m_y(position.m
 {
 }
 
-const unsigned int Position::get_x() const
+Position::Position() : m_x(0), m_y(0)
+{
+}
+
+int Position::get_x() const
 {
     return m_x;
 }
 
-const unsigned int Position::get_y() const
+int Position::get_y() const
 {
     return m_y;
 }
