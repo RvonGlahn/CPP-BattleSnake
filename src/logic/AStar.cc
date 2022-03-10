@@ -9,13 +9,12 @@
 AStar::AStar(BoardState &board, Position &start, Position &goal)
     : m_board(board), m_start(start), m_goal(goal), m_previous_position(start)
 {
+    Node start_node = {m_start, 0};
+    m_frontier.push(start_node);
 }
 
 std::vector<Position> AStar::search_path()
 {
-    Node start_node = {m_start, 0};
-    m_frontier.push(start_node);
-
     while (!m_frontier.empty())
     {
         Node current_node = m_frontier.top();
@@ -30,22 +29,27 @@ std::vector<Position> AStar::search_path()
         m_came_from[m_previous_position] = current_node.pos;
         m_previous_position = current_node.pos;
 
-        for (auto next_position : neighbor_positions(current_node.pos))
-        {
-            if (!valid_node(next_position))
-            {
-                continue;
-            }
-
-            int cost = current_node.cost + manhattan_distance(current_node.pos, m_goal);
-
-            Node new_node = {next_position, cost};
-            m_frontier.push(new_node);
-        }
+        explore_current_node(current_node);
     }
 
     std::vector<Position> path = create_path();
     return path;
+}
+
+void AStar::explore_current_node(Node current_node)
+{
+    for (auto next_position : neighbor_positions(current_node.pos))
+    {
+        if (!valid_node(next_position))
+        {
+            continue;
+        }
+
+        int cost = current_node.cost + manhattan_distance(current_node.pos, m_goal);
+
+        Node new_node = {next_position, cost};
+        m_frontier.push(new_node);
+    }
 }
 
 bool AStar::valid_node(Position &next_position)

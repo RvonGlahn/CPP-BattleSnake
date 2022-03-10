@@ -36,6 +36,7 @@ class AStar
 
     std::vector<Position> create_path();
     bool valid_node(Position &next_position);
+    void explore_current_node(Node current_node);
 
   public:
     AStar(BoardState &board, Position &start, Position &goal);
